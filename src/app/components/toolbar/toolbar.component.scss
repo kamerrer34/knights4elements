@@ -1,0 +1,127 @@
+.toolbar-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 10px;
+}
+
+.toolbar {
+    position: relative;
+    top: -55px;
+    height: 55px;
+    padding: 5px;
+    border-radius: 0 0 3px 3px;
+    background-color: #fff;
+    background: url(/assets/img/bg/bg2.png);
+    box-shadow: 0 0 15px rgba(0,0,0,0.7);
+    transition: top 0.25s;
+    
+    &.active {
+        top: 0;
+    }
+    
+    &__section {
+        display: inline-block;
+        vertical-align: top;
+    }
+    
+    &__name {
+        width: 200px;
+        margin-bottom: 3px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-weight: 500;
+        color: #222;
+    }
+    
+    &__xp-bar {
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;
+        width: 130px;
+        height: 12px;
+        border: 2px solid transparentize(#263238, 0.25);
+        background-color: transparentize(#607D8B, 0.75);
+        border-radius: 3px;
+        overflow: hidden;
+    }
+    
+    &__xp-diff {
+        position: absolute;
+        height: 100%;
+        background-color: transparentize(#263238, 0.25);
+        transition: width 0.25s;
+    }
+    
+    &__lvl {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 5px;
+        cursor: default;
+    }
+    
+    &__item {
+        width: 150px;
+        background-color: transparentize(#607D8B, 0.5);
+        border: 2px solid transparentize(#263238, 0.25);
+        border-radius: 3px;
+        line-height: 1;
+        font-size: 0;
+        
+        &:first-child {
+            margin-bottom: 5px;
+        }
+    }
+    
+    &__cell {
+        display: inline-block;
+        vertical-align: middle;
+        width: 50%;
+    }
+    
+    &__item-icon {
+        display: inline-block;
+        vertical-align: middle;
+        width: 20px;
+        height: 16px;
+        padding: 1px 2px;
+        font-size: 0;
+        line-height: 1;
+        background-color: transparentize(#263238, 0.25);
+    }
+    
+    &__item-txt {
+        display: inline-block;
+        vertical-align: middle;
+        padding: 0 5px;
+        font-size: 14px;
+        line-height: 15px;
+        font-weight: 500;
+        cursor: default;
+    }
+    
+    &__plus {
+        display: inline-block;
+        vertical-align: middle;
+        width: 10px;
+        height: 10px;
+        margin-top: 3px;
+        margin-right: 5px;
+        float: right;
+        font-size: 0;
+        line-height: 1;
+        cursor: pointer;
+    }
+    
+    .icon {
+        &_knuckle {
+            fill: #fff;
+        }
+        
+        &_furs {
+            fill: #8D6E63;
+        }
+    }
+}

@@ -1,0 +1,9 @@
+<div class="page">
+    <app-toolbar></app-toolbar>
+    <app-nav></app-nav>
+
+    <app-profile *ngIf="pages[0].active"></app-profile>
+    <app-city *ngIf="pages[1].active"></app-city>
+    <app-location *ngIf="pages[2].active"></app-location>
+    <app-bosses *ngIf="pages[3].active"></app-bosses>
+</div>

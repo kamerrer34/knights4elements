@@ -1,0 +1,30 @@
+.nav {
+    &__item {
+        position: relative;
+        height: 50px;
+        line-height: 50px;
+        padding: 0 10px;
+        font-weight: 500;
+        text-shadow: 0 0 10px transparentize(#222, 0.75);
+        cursor: pointer;
+        transition: color 0.25s, fill 0.25s;
+        
+        &:hover {
+            color: #D32F2F;
+            fill: #D32F2F;
+        }
+    }
+    
+    &__icon {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 12px;
+        margin: auto;
+        display: inline-block;
+        vertical-align: middle;
+        width: 24px;
+        height: 24px;
+        line-height: 1;
+    }
+}

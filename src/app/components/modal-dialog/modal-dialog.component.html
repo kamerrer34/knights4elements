@@ -1,0 +1,14 @@
+<div class="modal-dialog">
+    <h1 md-dialog-title class="modal-dialog__title">{{ data.title }}</h1>
+
+    <div md-dialog-content>
+        <span class="modal-dialog__img" [innerHTML]="data.img | html"></span>
+        <div class="modal-dialog__txt">{{ data.txt }}</div>
+    </div>
+
+    <div md-dialog-actions class="modal-dialog__foot">
+        <button *ngIf="data.btn" md-raised-button [md-dialog-close]="true" color="primary" class="modal-dialog__btn">
+            {{ data.btn }}
+        </button>
+    </div>
+</div>
