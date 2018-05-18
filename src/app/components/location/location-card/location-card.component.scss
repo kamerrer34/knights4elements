@@ -1,0 +1,75 @@
+.location {
+    &__card {
+        position: relative;
+        height: 100%;
+        padding: 15px;
+        border: 2px solid #946D43;
+        border-radius: 3px;
+        background: url(/assets/img/bg/bg9.jpg);
+        box-shadow: 5px 5px 5px transparentize(#000, 0.5);
+    }
+    
+    &__head {
+        position: relative;
+        margin-bottom: 15px;
+    }
+    
+    &__name {
+        font-size: 18px;
+        font-weight: 500;
+        text-transform: uppercase;
+        text-shadow: 0 0 5px transparentize(#000, 0.75);
+    }
+    
+    &__passed,
+    &__courage {
+        position: absolute;
+        top: 0;
+        font-size: 15px;
+        line-height: 24px;
+        font-weight: 500;
+        text-shadow: 0 0 5px transparentize(#000, 0.75);
+        color: #263238;
+    }
+    
+    &__passed {
+        left: 250px;
+    }
+    
+    &__courage {
+        right: 0;
+        text-align: right;
+    }
+    
+    &__footer {
+        position: relative;
+        margin-top: 17px;
+        width: 100%;
+    }
+    
+    &__btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 150px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.75);
+    }
+    
+    &__icon {
+        &_shield {
+            display: inline-block;
+            vertical-align: middle;
+            width: 20px;
+            height: 20px;
+        }
+        
+        &_energy {
+            display: inline-block;
+            vertical-align: middle;
+            width: 12px;
+            height: 12px;
+            font-size: 0;
+            line-height: 1;
+        }
+    }
+}

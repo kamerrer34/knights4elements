@@ -1,58 +1,83 @@
-import { svg } from './svg';
-
 export const localData = {
     'user': {
-        'id': '251733058',
-        'xp': 400
-    },
-    'locations': [
-        {
-            'id': 1,
-            'name': 'Дремучий лес'
+        'id': 251733058,
+        'currency': {
+            'diamond': 2,
+            'food': 2,
+            'furs': 4,
+            'gold': 20,
+            'silver': 100
         },
-        {
-            'id': 2,
-            'name': 'Паучья пещера'
+        'weapons': {
+            '0': 0,
+            '1': 0,
+            '2': 0,
+            '3': 0
         },
-        {
-            'id': 3,
-            'name': 'Тихое озеро'
+        'skills': {
+            'experience': 0,
+            'level': 1,
+            'improvement': 0,
+            'strength': 1,
+            'dexterity': 1,
+            'intelligence': 1,
+            'endurance': 1,
+            'energy': 100,
+            'energyMax': 100,
+            'health': 3600,
+            'poison': 0,
+            'meleeHit': 10,
+            'meleeCrit': 0,
+            'waterHit': 10,
+            'waterCrit': 0,
+            'fireHit': 10,
+            'fireCrit': 0,
+            'airHit': 10,
+            'airCrit': 0,
+            'earthHit': 10,
+            'earthCrit': 0
         },
-        {
-            'id': 4,
-            'name': 'Песчаная пустошь'
-        },
-        {
-            'id': 5,
-            'name': 'Старое болото'
-        }
-    ],
-    'pages': {
-        'main': [
-            {
-                name: 'profile',
-                title: 'Профиль',
-                icon: svg.profile,
-                active: true
-            },
-            {
-                name: 'city',
-                title: 'Город',
-                icon: svg.city,
-                active: false
-            },
-            {
-                name: 'location',
-                title: 'Локации',
-                icon: svg.location,
-                active: false
-            },
-            {
-                name: 'bosses',
-                title: 'Розыск',
-                icon: svg.bosses,
-                active: false
+        'location': {
+            'courage': 0,
+            'passed': 0,
+            'status': {
+                'event': false,
+                'level': 1,
+                'stage': 0
             }
-        ]
-    }
+        }
+    },
+    'loading': {
+        status: false
+    },
+    'pages': [
+        {
+            name: 'profile',
+            title: 'Профиль',
+            icon: 'profile',
+            active: true,
+            sub: false
+        },
+        {
+            name: 'city',
+            title: 'Город',
+            icon: 'city',
+            active: false,
+            sub: false
+        },
+        {
+            name: 'location',
+            title: 'Локации',
+            icon: 'location',
+            active: false,
+            sub: false
+        },
+        {
+            name: 'bosses',
+            title: 'Розыск',
+            icon: 'bosses',
+            active: false,
+            sub: false
+        }
+    ]
 };

@@ -1,0 +1,58 @@
+.profile-increase {
+    &__panel {
+        margin-bottom: 15px;
+    }
+    
+    &__select {
+        &:not(:last-child) {
+            margin-right: 15px;
+        }
+    }
+    
+    &__list {
+        font-size: 0;
+    }
+    
+    &__item {
+        display: inline-block;
+        vertical-align: top;
+    }
+    
+    &__inner {
+        position: relative;
+        display: block;
+        margin-right: 15px;
+        margin-bottom: 15px;
+    }
+    
+    &__icon {
+        display: block;
+        width: 90px;
+        height: 90px;
+        padding: 10px;
+        border-radius: 3px;
+        box-shadow: 0 0 5px transparentize(#000, 0.25);
+        background-color: #fff;
+    }
+    
+    &__progress {
+        display: block;
+        margin-top: 5px;
+        text-align: center;
+        cursor: default;
+    }
+    
+    &__progress-icon {
+        display: inline-block;
+        vertical-align: middle;
+        width: 16px;
+        height: 16px;
+        margin-right: 5px;
+    }
+    
+    &__progress-text {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 14px;
+    }
+}

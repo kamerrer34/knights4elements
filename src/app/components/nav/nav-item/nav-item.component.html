@@ -1,5 +1,4 @@
-<div class="nav__item" (click)="goTo()" >
-    <span class="nav__text">{{ item.title }}</span>
-
-    <span class="nav__icon" [innerHTML]="item.icon | html"></span>
+<div class="nav__item" (click)="goTo()">
+    <span class="nav__text">{{ navItem.title }}</span>
+    <icon class="nav__icon" icon="{{ navItem.icon }}"></icon>
 </div>

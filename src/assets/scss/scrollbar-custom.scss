@@ -1,0 +1,23 @@
+.ps {
+    position: relative;
+    
+    &__rail-y,
+    &__thumb-y {
+        opacity: 1 !important;
+        transition: none !important;
+    }
+    
+    &__rail-y {
+        width: 10px !important;
+        height: 100%;
+        background-color: transparentize(#fff, 0.75) !important;
+    }
+    
+    &__thumb-y {
+        width: 6px !important;
+        border-radius: 3px !important;
+        background-color: transparentize(#000, 0.5) !important;
+    }
+}
+
+

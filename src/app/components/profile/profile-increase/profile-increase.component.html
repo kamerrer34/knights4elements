@@ -1,0 +1,40 @@
+<div class="profile-increase">
+    <div class="profile-increase__panel">
+        <mat-form-field color="accent" class="profile-increase__select">
+            <mat-select placeholder="Статус" [(value)]="status">
+                <mat-option value="all">Все</mat-option>
+                <mat-option value="0">Не получено</mat-option>
+                <mat-option value="1">Получено</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field color="accent" class="profile-increase__select">
+            <mat-select placeholder="Источник" [(value)]="category">
+                <mat-option value="all">Все</mat-option>
+                <mat-option value="location">Локации</mat-option>
+                <mat-option value="bosses">Боссы</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <div class="profile-increase__list">
+        <div *ngFor="let gain of gains" class="profile-increase__item" [ngClass]="{'active': gain.level}">
+            <span *ngIf="status === 'all' || (gain.active && status === '1') || (!gain.active && status === '0')"
+                  class="profile-increase__inner">
+                <span *ngIf="category === 'all' || gain.category === category">
+                    <icon class="profile-increase__icon"
+                          icon="{{ gain.icon }}"
+                          matTooltip="{{ gain.name + '. ' + gain.text }}"></icon>
+
+                    <span class="profile-increase__progress" matTooltip="{{ gain.source }}">
+                        <icon *ngIf="gain.number && !gain.active" class="profile-increase__progress-icon" icon="puzzle"></icon>
+                        <span *ngIf="gain.number && !gain.active" class="profile-increase__progress-text">
+                            {{ gain.progress }} / {{ gain['number'] }}
+                        </span>
+                        <span *ngIf="gain.active" class="profile-increase__progress-text">Получено</span>
+                        <span *ngIf="!gain.active && !gain.number" class="profile-increase__progress-text">Не получено</span>
+                    </span>
+                </span>
+            </span>
+        </div>
+    </div>
+</div>

@@ -1,67 +1,52 @@
-<div class="toolbar-wrap">
-    <div class="toolbar" [ngClass]="{'active': info && currency && skills}">
+<div class="toolbar-wrap" *ngIf="userInfo && userSkills && userCurrency">
+    <div class="toolbar">
         <div class="toolbar__section">
-            <div class="toolbar__name">{{ login }}</div>
+            <div class="toolbar__name">{{ userInfo.login }}</div>
 
-            <div class="toolbar__xp-bar" mdTooltip="Опыта до следующего уровня: {{ expDiff }}">
+            <div class="toolbar__xp-bar" matTooltip="Опыта до следующего уровня: {{ expDiff }}">
                 <span class="toolbar__xp-diff" [ngStyle]="{'width': expBar + '%'}"></span>
             </div>
 
-            <div class="toolbar__lvl">{{ level }}ур.</div>
+            <div class="toolbar__lvl">{{ userSkills.level }}ур.</div>
         </div>
 
         <div class="toolbar__section">
-            <div class="toolbar__item" mdTooltip="Опыт">
-                <span class="toolbar__item-icon icon_knuckle" [innerHTML]="svg['knuckle'] | html"></span>
-                <span class="toolbar__item-txt">{{ experience }}</span>
+            <div class="toolbar__item">
+                <icon class="toolbar__item-icon icon_knuckle" icon="knuckle" matTooltip="Опыт"></icon>
+                <span class="toolbar__item-txt">{{ userSkills.experience }}</span>
             </div>
 
             <div class="toolbar__item">
-                <div class="toolbar__cell" mdTooltip="Энергия">
-                    <span class="toolbar__item-icon icon_energy" [innerHTML]="svg['energy'] | html"></span>
-                    <span class="toolbar__item-txt">{{ energy }}</span>
-
-                    <span class="toolbar__plus" [innerHTML]="svg['plus'] | html" (click)="makeEnergy()"></span>
-                </div>
-
-                <div class="toolbar__cell" mdTooltip="Еда">
-                    <span class="toolbar__item-icon icon_food" [innerHTML]="svg['food'] | html"></span>
-                    <span class="toolbar__item-txt">{{ food }}</span>
-
-                    <span class="toolbar__plus" [innerHTML]="svg['plus'] | html" (click)="buyFood()"></span>
-                </div>
+                <icon class="toolbar__item-icon icon_energy" icon="energy" matTooltip="Энергия"></icon>
+                <span class="toolbar__item-txt">{{ userSkills.energy }}/{{ userSkills.energyMax }}</span>
+                <icon class="toolbar__plus" icon="plus" (click)="makeEnergy()"></icon>
             </div>
         </div>
 
         <div class="toolbar__section">
-            <div class="toolbar__item" mdTooltip="Серебро">
-                <span class="toolbar__item-icon icon_silver" [innerHTML]="svg['silver'] | html"></span>
-                <span class="toolbar__item-txt">{{ silver }}</span>
-
-                <span class="toolbar__plus" [innerHTML]="svg['plus'] | html"></span>
+            <div class="toolbar__item">
+                <icon class="toolbar__item-icon icon_silver" icon="silver" matTooltip="Серебро"></icon>
+                <span class="toolbar__item-txt">{{ userCurrency.silver }}</span>
+                <icon class="toolbar__plus" icon="plus"></icon>
             </div>
-            <div class="toolbar__item" mdTooltip="Золото">
-                <span class="toolbar__item-icon icon_gold" [innerHTML]="svg['gold'] | html"></span>
-                <span class="toolbar__item-txt">{{ gold }}</span>
-
-                <span class="toolbar__plus" [innerHTML]="svg['plus'] | html"></span>
+            <div class="toolbar__item">
+                <icon class="toolbar__item-icon icon_gold" icon="gold" matTooltip="Золото"></icon>
+                <span class="toolbar__item-txt">{{ userCurrency.gold }}</span>
+                <icon class="toolbar__plus" icon="plus"></icon>
             </div>
         </div>
 
         <div class="toolbar__section">
-            <div class="toolbar__item" mdTooltip="Пушнина">
-                <span class="toolbar__item-icon icon_furs" [innerHTML]="svg['furs'] | html"></span>
-                <span class="toolbar__item-txt">{{ furs }}</span>
-
-                <span class="toolbar__plus" [innerHTML]="svg['plus'] | html"></span>
+            <div class="toolbar__item">
+                <icon class="toolbar__item-icon icon_furs" icon="furs" matTooltip="Пушнина"></icon>
+                <span class="toolbar__item-txt">{{ userCurrency.furs }}</span>
+                <icon class="toolbar__plus" icon="plus"></icon>
             </div>
-            <div class="toolbar__item" mdTooltip="Алмазы">
-                <span class="toolbar__item-icon icon_diamond" [innerHTML]="svg['diamond'] | html"></span>
-                <span class="toolbar__item-txt">{{ diamond }}</span>
-
-                <span class="toolbar__plus" [innerHTML]="svg['plus'] | html"></span>
+            <div class="toolbar__item">
+                <icon class="toolbar__item-icon icon_diamond" icon="diamond" matTooltip="Алмазы"></icon>
+                <span class="toolbar__item-txt">{{ userCurrency.diamond }}</span>
+                <icon class="toolbar__plus" icon="plus"></icon>
             </div>
         </div>
-
     </div>
 </div>

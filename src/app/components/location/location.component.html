@@ -1,3 +1,8 @@
-<div class="location-list">
-    <app-location-item *ngFor="let location of locations" [location]="location"></app-location-item>
+<div *ngIf="!location.sub" class="location__list" [perfectScrollbar]>
+    <location-item *ngFor="let locationItem of locations"
+                   class="location__item"
+                   (open)="openCard($event)"
+                   [locationItem]="locationItem"></location-item>
 </div>
+
+<location-card *ngIf="location.sub" [locationId]="locationId"></location-card>

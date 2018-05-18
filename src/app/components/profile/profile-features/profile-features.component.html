@@ -1,0 +1,133 @@
+<div class="profile-features" *ngIf="userInfo && userSkills && userGains && gains">
+    <div class="profile-features__info">
+        <div class="profile-features__pic">
+            <icon class="no-img" icon="profile"></icon>
+            <img src="{{ userInfo.photo }}" alt="">
+        </div>
+        <div class="profile-features__health">
+            <icon class="profile-features__icon profile-features__icon_health" icon="heart" matTooltip="Здоровье"></icon>
+            {{ health }}
+        </div>
+    </div>
+
+    <div class="profile-features__indicators">
+        <div class="profile-features__indicator" [ngClass]="{'plus': strength < 50 && strength < dexterity + 5 && strength < intelligence + 5 && strength < endurance + 5}">
+            <icon class="profile-features__icon" icon="strong" matTooltip="Влияет на здоровье игрока"></icon>
+            <span class="profile-features__indicator-txt">Сила: <span class="number">{{ strength }}</span></span>
+
+            <icon *ngIf="strength < 50 && strength < dexterity + 5 && strength < intelligence + 5 && strength < endurance + 5"
+                  class="profile-features__plus"
+                  icon="plus"
+                  matTooltip="Необходимо развития: {{ strengthNext }}"
+                  (click)="upSkill('strength', strengthNext)"></icon>
+        </div>
+
+        <div class="profile-features__indicator" [ngClass]="{'plus': dexterity < 50 && dexterity < strength + 5 && dexterity < intelligence + 5 && dexterity < endurance + 5}">
+            <icon class="profile-features__icon" icon="target" matTooltip="Влияет на рукопашный урон"></icon>
+            <span class="profile-features__indicator-txt">Ловкость: <span class="number">{{ dexterity }}</span></span>
+
+            <icon *ngIf="dexterity < 50 && dexterity < strength + 5 && dexterity < intelligence + 5 && dexterity < endurance + 5"
+                  class="profile-features__plus"
+                  icon="plus"
+                  matTooltip="Необходимо развития: {{ dexterityNext }}"
+                  (click)="upSkill('dexterity', dexterityNext)"></icon>
+        </div>
+
+        <div class="profile-features__indicator" [ngClass]="{'plus': intelligence < 50 && intelligence < dexterity + 5 && intelligence < strength + 5 && intelligence < endurance + 5}">
+            <icon class="profile-features__icon" icon="brain" matTooltip="Влияет на магический урон"></icon>
+            <span class="profile-features__indicator-txt">Интеллект: <span class="number">{{ intelligence }}</span></span>
+
+            <icon *ngIf="intelligence < 50 && intelligence < dexterity + 5 && intelligence < strength + 5 && intelligence < endurance + 5"
+                  class="profile-features__plus"
+                  icon="plus"
+                  matTooltip="Необходимо развития: {{ intelligenceNext }}"
+                  (click)="upSkill('intelligence', intelligenceNext)"></icon>
+        </div>
+
+        <div class="profile-features__indicator" [ngClass]="{'plus': endurance < 50 && endurance < dexterity + 5 && endurance < intelligence + 5 && endurance < strength + 5}">
+            <icon class="profile-features__icon" icon="pulse" matTooltip="Влияет на запас энергии"></icon>
+            <span class="profile-features__indicator-txt">
+            Выносливость: <span class="number">{{ endurance }}</span>
+        </span>
+
+            <icon *ngIf="endurance < 50 && endurance < dexterity + 5 && endurance < intelligence + 5 && endurance < strength + 5"
+                  class="profile-features__plus"
+                  icon="plus"
+                  matTooltip="Необходимо развития: {{ enduranceNext }}"
+                  (click)="upSkill('endurance', enduranceNext)"></icon>
+        </div>
+
+        <div class="profile-features__indicator profile-features__indicator_free">
+        <span class="profile-features__indicator-txt">
+            Свободно: <span class="number" matTooltip="Очки развития">{{ userSkills.improvement }}</span>
+        </span>
+        </div>
+    </div>
+
+    <div class="profile-features__indicators profile-features__indicators_damage">
+        <div class="profile-features__indicator">
+            <icon class="profile-features__icon" icon="sword"></icon>
+            <span class="profile-features__indicator-txt">
+            Рукопашный урон:
+            <span class="number">
+                {{ meleeHit }}
+                <span matTooltip="Вероятность критического удара">
+                    ({{ userSkills.meleeCrit }}%)
+                </span>
+            </span>
+        </span>
+        </div>
+
+        <div class="profile-features__indicator">
+            <icon class="profile-features__icon" icon="water"></icon>
+            <span class="profile-features__indicator-txt">
+            Урон стихии Вода:
+            <span class="number">
+                {{ waterHit  }}
+                <span matTooltip="Вероятность критического удара">
+                    ({{ userSkills.waterCrit }}%)
+                </span>
+            </span>
+        </span>
+        </div>
+
+        <div class="profile-features__indicator">
+            <icon class="profile-features__icon" icon="fire"></icon>
+            <span class="profile-features__indicator-txt">
+            Урон стихии Огонь:
+            <span class="number">
+                {{ fireHit }}
+                <span matTooltip="Вероятность критического удара">
+                    ({{ userSkills.fireCrit }}%)
+                </span>
+            </span>
+        </span>
+        </div>
+
+        <div class="profile-features__indicator">
+            <icon class="profile-features__icon" icon="air"></icon>
+            <span class="profile-features__indicator-txt">
+            Урон стихии Воздух:
+            <span class="number">
+                {{ airHit }}
+                <span matTooltip="Вероятность критического удара">
+                    ({{ userSkills.airCrit }}%)
+                </span>
+            </span>
+        </span>
+        </div>
+
+        <div class="profile-features__indicator">
+            <icon class="profile-features__icon" icon="earth"></icon>
+            <span class="profile-features__indicator-txt">
+            Урон стихии Земля:
+            <span class="number">
+                {{ earthHit }}
+                <span matTooltip="Вероятность критического удара">
+                    ({{ userSkills.earthCrit }}%)
+                </span>
+            </span>
+        </span>
+        </div>
+    </div>
+</div>

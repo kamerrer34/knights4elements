@@ -1,9 +1,50 @@
 body {
-    .mat-dialog-container {
-        padding: 0;
-        overflow: visible;
-        font-family: 'Roboto', 'Helvetica Neue', sans-serif;
-        background: none;
-        box-shadow: none;
+    .mat-dialog {
+        &-container {
+            padding: 0;
+            overflow: visible;
+            font-family: 'Roboto', 'Helvetica Neue', sans-serif;
+            background: none;
+            box-shadow: none;
+        }
     }
+    
+    .mat-tab {
+        &-label {
+            height: 36px;
+            font-size: 15px;
+            opacity: 1;
+        
+            &:focus {
+                background: none !important;
+            }
+        
+            &-container {
+                margin-bottom: 15px;
+            }
+        }
+    }
+    
+    .mat-form-field {
+        &-label {
+            color: #000;
+        }
+    }
+    
+    .mat-select {
+        &-trigger {
+            font-size: 15px;
+            color: rgba(0, 0, 0, 0.87);
+        }
+    }
+    
+    .mat-spinner {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+    }
+    
 }

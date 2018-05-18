@@ -2,11 +2,11 @@
     position: absolute;
     left: -82px;
     top: 200px;
+    z-index: 1000;
     width: 130px;
     border-radius: 0 3px 3px 0;
     overflow: hidden;
-    background-color: #fff;
-    background: url(/assets/img/bg/bg2.png);
+    background: #fff url(/assets/img/bg/bg2.jpg);
     box-shadow: 0 0 15px rgba(0,0,0,0.7);
     transition: left 0.25s;
     

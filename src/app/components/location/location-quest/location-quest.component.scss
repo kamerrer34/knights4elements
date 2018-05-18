@@ -1,0 +1,114 @@
+.location {
+    &__quest {
+        margin-top: 15px;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: transparentize(#795548, 0.5);
+        border: 2px solid transparentize(#3E2723, 0.25);
+    
+        &.full {
+            .location__stage {
+                background-color: transparentize(#263238, 0.25);
+            }
+        }
+    
+        &.current {
+            .stage-1 .location__stage_1,
+            .stage-2 .location__stage_1,
+            .stage-3 .location__stage_1,
+            .stage-4 .location__stage_1,
+            .stage-5 .location__stage_1,
+            .stage-2 .location__stage_2,
+            .stage-3 .location__stage_2,
+            .stage-4 .location__stage_2,
+            .stage-5 .location__stage_2,
+            .stage-3 .location__stage_3,
+            .stage-4 .location__stage_3,
+            .stage-5 .location__stage_3,
+            .stage-4 .location__stage_4,
+            .stage-5 .location__stage_4,
+            .stage-5 .location__stage_5 {
+                background-color: transparentize(#263238, 0.25);
+            }
+        }
+    }
+    
+    &__quest-info {
+        display: inline-block;
+        vertical-align: top;
+        width: 350px;
+    }
+    
+    &__bar {
+        height: 20px;
+        background-color: transparentize(#607D8B, 0.5);
+        border-left: 2px solid transparentize(#263238, 0.25);
+       
+        font-size: 0;
+    }
+    
+    &__stage {
+        display: inline-block;
+        vertical-align: top;
+        width: 20%;
+        height: 100%;
+        border: 2px solid transparentize(#263238, 0.25);
+        border-left: none;
+    }
+    
+    &__section {
+        display: inline-block;
+        vertical-align: top;
+        text-align: center;
+        font-size: 15px;
+        
+        &_price{
+            width: 50px;
+            margin-right: 15px;
+        }
+        
+        &_reward {
+            width: 160px;
+        }
+    }
+    
+    &__quest-ttl,
+    &__reward-ttl {
+        margin-bottom: 5px;
+        font-size: 16px;
+        text-shadow: 0 0 5px transparentize(#000, 0.75);
+    }
+    
+    &__reward {
+        display: inline-block;
+        vertical-align: top;
+        width: 230px;
+        margin-left: 30px;
+    }
+    
+    &__reward-ttl {
+        font-size: 15px;
+        color: #3E2723;
+    }
+    
+    &__reward-txt {
+        display: inline-block;
+        vertical-align: top;
+        width: 50px;
+    }
+    
+    &__icon {
+        display: inline-block;
+        vertical-align: middle;
+        width: 20px;
+        height: 20px;
+        
+        &_knuckle {
+            fill: #fff;
+        }
+        
+        &_shield {
+            fill: #263238;
+        }
+    }
+}

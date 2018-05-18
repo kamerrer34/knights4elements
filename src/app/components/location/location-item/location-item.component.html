@@ -1,4 +1,41 @@
-<div class="location__item">
-    <img class="location__pic" src="assets/img/locations/location{{ location.id }}.jpg" alt="">
-    <div class="location__name">{{ location.name }}</div>
+<div class="location__inner">
+    <div class="location__pic">
+        <img src="assets/img/locations/location{{ locationItem.id }}.jpg" alt="">
+    </div>
+
+    <div class="location__info">
+        <div class="location__ttl location__ttl_name">{{ locationItem.name }}</div>
+
+        <div class="location__text">
+            <icon class="location__icon_shield" icon="shield" matTooltip="Отвага"></icon>
+            {{ locationCourage }}
+        </div>
+
+        <button mat-raised-button color="accent" class="location__btn" (click)="openLocation()">Перейти</button>
+    </div>
+
+    <div class="location__info" >
+        <div class="location__ttl">Самый активный:</div>
+
+        <div *ngIf="leaderInfo" class="location__userpic">
+            <img  src="{{ leaderInfo.photo }}" alt="">
+        </div>
+        <icon *ngIf="!leaderInfo" class="location__userpic" icon="profile"></icon>
+
+        <div class="location__text location__text_brown">
+            <span *ngIf="leaderInfo">{{ leaderInfo.login }}</span>
+            <span *ngIf="!leaderInfo">Стань первым!</span>
+        </div>
+
+        <div *ngIf="locationItem.top" class="location__text">
+            <icon class="location__icon_shield" icon="shield" matTooltip="Отвага"></icon>
+            {{ locationItem.courage }}
+        </div>
+        <div class="location__text" *ngIf="gainInfo">
+            Награда
+            <icon class="location__icon_top" icon="{{ gainInfo.shortIcon }}"
+                  matTooltip="{{ gainInfo.name + ' (' + gainInfo.text + ')' }}"></icon>
+            {{ gainInfo.shortText }}
+        </div>
+    </div>
 </div>

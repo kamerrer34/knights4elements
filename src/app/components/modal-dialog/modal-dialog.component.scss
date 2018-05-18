@@ -1,9 +1,8 @@
 .modal-dialog {
     width: 300px;
     border-radius: 3px;
-    background: url(/assets/img/bg/bg4.jpg) no-repeat center;
-    background-size: cover;
-    box-shadow: 2px 2px 0 1px #8A6C52, 6px 6px 15px transparentize(#000, 0.25);
+    background: url(/assets/img/bg/bg9.jpg) right;
+    box-shadow: 2px 2px 0 1px #9C6B32, 6px 6px 15px transparentize(#000, 0.25);
     
     &__title {
         position: relative;
@@ -17,7 +16,7 @@
         box-shadow: 3px 3px 5px transparentize(#000, 0.25);
         text-shadow: 0 0 10px transparentize(#222, 0.75);
         background-color: #8A8D92;
-        background: url(/assets/img/bg3.jpg);
+        background: url(/assets/img/bg/bg3.jpg);
         
         &:before,
         &:after {
@@ -61,6 +60,43 @@
         border-radius: 2px;
         box-shadow: 0 0 5px transparentize(#000, 0.25);
         background-color: #fff;
+    }
+    
+    &__prize {
+        width: 240px;
+        margin: 0 auto 10px;
+        text-align: center;
+        font-size: 0;
+    }
+    
+    &__prize-item {
+        display: inline-block;
+        vertical-align: top;
+        width: 33.33333%;
+        margin-top: 15px;
+    }
+    
+    &__prize-icon {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 5px;
+        width: 24px;
+        height: 24px;
+    }
+    
+    &__prize-txt {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 17px;
+        font-weight: 500;
+    }
+    
+    &__btn-icon {
+        display: inline-block;
+        vertical-align: middle;
+        width: 16px;
+        height: 16px;
+        margin-left: 3px;
     }
     
     &__foot {

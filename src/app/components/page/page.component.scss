@@ -3,4 +3,13 @@
     height: 100%;
     padding: 65px 60px 10px;
     overflow: hidden;
+    
+    &_load {
+        background: url(/assets/img/logo.png) no-repeat center;
+    }
+    
+    &_blur {
+        filter: blur(1px);
+    }
+    
 }

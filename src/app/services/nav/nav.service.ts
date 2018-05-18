@@ -9,9 +9,14 @@ export class NavService {
     }
 
     goTo(item) {
-        for (let i = 0; i < localData.pages.main.length; i++) {
-            localData.pages.main[i].active = localData.pages.main[i].name === item;
+        for (let i = 0; i < localData.pages.length; i++) {
+            localData.pages[i].active = localData.pages[i].name === item;
+            localData.pages[i].sub = false;
         }
+    }
+
+    showSub(page) {
+        localData.pages[page].sub = true;
     }
 
 }

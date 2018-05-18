@@ -1,12 +1,15 @@
 @import 'assets/scss/normalize';
 @import 'assets/scss/material-custom';
+@import '~perfect-scrollbar/css/perfect-scrollbar.css';
+@import 'assets/scss/scrollbar-custom';
 @import '~@angular/material/_theming';
+
 
 
 @include mat-core();
 
 $primary: mat-palette($mat-blue-grey);
-$accent:  mat-palette($mat-red, A200, A100, A400);
+$accent:  mat-palette($mat-brown, 700, 100, 900);
 
 $theme: mat-light-theme($primary, $accent);
 

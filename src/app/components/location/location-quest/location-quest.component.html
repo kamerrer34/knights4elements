@@ -1,0 +1,40 @@
+<div class="location__quest" [ngClass]="{ 'current': level == quest.id + 1, 'full': level > quest.id + 1 }">
+    <div class="location__quest-info">
+        <div class="location__quest-ttl">{{ quest.name }}</div>
+
+        <div class="location__bar" ngClass="stage-{{ stage }}">
+            <span class="location__stage location__stage_1"></span>
+            <span class="location__stage location__stage_2"></span>
+            <span class="location__stage location__stage_3"></span>
+            <span class="location__stage location__stage_4"></span>
+            <span class="location__stage location__stage_5"></span>
+        </div>
+    </div>
+    <div class="location__reward">
+        <div class="location__section location__section_price">
+            <div class="location__reward-ttl">Цена</div>
+
+            {{ quest.energy }}
+            <icon class="location__icon location__icon_energy" icon="energy"></icon>
+        </div>
+
+        <div class="location__section location__section_reward">
+            <div class="location__reward-ttl">Награда</div>
+
+            <div class="location__reward-txt">
+                {{ quest.energy * 1 }}
+                <icon class="location__icon location__icon_shield" icon="shield"></icon>
+            </div>
+
+            <div class="location__reward-txt">
+                {{ quest.energy * 2 }}
+                <icon class="location__icon location__icon_knuckle" icon="knuckle"></icon>
+            </div>
+
+            <div class="location__reward-txt">
+                {{ quest.energy * 2 }}
+                <icon class="location__icon location__icon_silver" icon="silver"></icon>
+            </div>
+        </div>
+    </div>
+</div>

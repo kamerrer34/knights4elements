@@ -8,18 +8,13 @@
 
 .toolbar {
     position: relative;
-    top: -55px;
+    top: 0;
     height: 55px;
     padding: 5px;
     border-radius: 0 0 3px 3px;
     background-color: #fff;
-    background: url(/assets/img/bg/bg2.png);
+    background: url(/assets/img/bg/bg2.jpg);
     box-shadow: 0 0 15px rgba(0,0,0,0.7);
-    transition: top 0.25s;
-    
-    &.active {
-        top: 0;
-    }
     
     &__section {
         display: inline-block;
@@ -52,7 +47,7 @@
         position: absolute;
         height: 100%;
         background-color: transparentize(#263238, 0.25);
-        transition: width 0.25s;
+        transition: width 0.5s;
     }
     
     &__lvl {
@@ -113,15 +108,5 @@
         font-size: 0;
         line-height: 1;
         cursor: pointer;
-    }
-    
-    .icon {
-        &_knuckle {
-            fill: #fff;
-        }
-        
-        &_furs {
-            fill: #8D6E63;
-        }
     }
 }

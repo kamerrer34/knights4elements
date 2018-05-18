@@ -1,0 +1,21 @@
+<div class="location__card" *ngIf="dataLocation && userLocation">
+    <div class="location__head">
+        <div class="location__name">{{ dataLocation.name }}</div>
+
+        <div class="location__passed">Пройдена раз: {{ userLocation.passed }}</div>
+
+        <div class="location__courage">
+            Получено отваги:
+            <icon class="location__icon_shield" icon="shield"></icon>
+            {{ userLocation.courage }}
+        </div>
+    </div>
+
+    <div class="location__inner">
+        <location-quest *ngFor="let quest of dataLocation.quests" [quest]="quest" [level]="locationLevel" [stage]="locationStage"></location-quest>
+
+        <div class="location__footer">
+            <button mat-raised-button color="accent" class="location__btn" (click)="perform()">Выполнить</button>
+        </div>
+    </div>
+</div>

@@ -1,9 +1,12 @@
-<div class="page">
-    <app-toolbar></app-toolbar>
-    <app-nav></app-nav>
+<div class="page page_load" *ngIf="!userData"></div>
 
-    <app-profile *ngIf="pages[0].active"></app-profile>
-    <app-city *ngIf="pages[1].active"></app-city>
-    <app-location *ngIf="pages[2].active"></app-location>
-    <app-bosses *ngIf="pages[3].active"></app-bosses>
+<div class="page" *ngIf="userData" [ngClass]="{'page_blur': loading.status}">
+    <toolbar></toolbar>
+    <nav></nav>
+
+    <profile *ngIf="pageList[0].active"></profile>
+    <city *ngIf="pageList[1].active"></city>
+    <location *ngIf="pageList[2].active"></location>
+    <bosses *ngIf="pageList[3].active"></bosses>
 </div>
+<loading *ngIf="loading.status"></loading>

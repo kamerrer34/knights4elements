@@ -1,23 +1,38 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { localData } from '../../shared/data';
+
+import { NavService } from '../../services/nav/nav.service';
 import { LocationService } from '../../services/location/location.service';
 
 @Component({
-    selector: 'app-location',
+    selector: 'location',
     templateUrl: './location.component.html',
     styleUrls: ['./location.component.scss']
 })
 
 export class LocationComponent implements OnInit {
-    locations: any = localData.locations;
+    @Input() userData: any;
+    @Input() gains: any;
 
-    constructor(private locationService: LocationService) { }
+    locations: any;
+    locationId: number;
+    location: any = localData.pages[2];
+
+    constructor(
+        private locationService: LocationService,
+        private navService: NavService
+    ) {}
 
     ngOnInit() {
-        /*this.locationService.getLocation().subscribe(locations => {
+        this.locationService.getLocations().subscribe(locations => {
             this.locations = locations;
-        });*/
+        });
+    }
+
+    openCard(id) {
+        this.locationId = id;
+        this.navService.showSub(2);
     }
 
 }
